@@ -1,3 +1,4 @@
+
 #  Clinic Appointment Management System
 
 A Java 19 + Spring Boot REST API to manage patients, doctors, and appointments. This project allows booking appointments between patients and doctors while preventing double-booking and unavailable slots.
@@ -109,6 +110,50 @@ This method ensures:
 - Swagger UI: Integrated for easy manual API testing.
 
 - In-Memory List Storage: For simplicity during evaluation (no DB dependency).
-
-
 - CustomException: Handles error responses with descriptive messages.
+
+  ## 📸 Swagger UI – API Overview
+
+The following image displays all available REST API endpoints exposed by the Clinic Appointment Management System:
+
+### ✅ Patient Controller
+- `GET /patients`  
+  Fetch all patients.
+
+- `POST /patients`  
+  Register a new patient.
+
+### ✅ Doctor Controller
+- `GET /doctors`  
+  Retrieve all doctors.
+
+- `POST /doctors`  
+  Add a new doctor.
+
+- `GET /doctors/{id}`  
+  Get doctor details by ID.  
+  _Example:_ `/doctors/1`
+
+- `GET /doctors/{id}/slots`  
+  Retrieve available slots for a doctor.  
+  _Example:_ `/doctors/1/slots`
+
+### ✅ Appointment Controller
+- `GET /appointments`  
+  Get all booked appointments.
+
+- `POST /appointments`  
+  Book a new appointment.
+
+- `GET /appointments/doctor/{doctorId}`  
+  Get all appointments for a given doctor ID.
+
+- `GET /appointments/doctor/{doctorId}/date`  
+  Get appointments by doctor ID and date.
+
+---
+
+### 📷 Swagger Screenshot
+
+
+
