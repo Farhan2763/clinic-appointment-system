@@ -29,55 +29,78 @@ mvn spring-boot:run
 4. Access Swagger:  
    [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
----
+ ## Swagger UI – API Overview
 
-##  Sample API Requests (use in Swagger)
+The following image displays all available REST API endpoints exposed by the Clinic Appointment Management System:
 
-### ➕ Add Patient (POST /patients)
-json
-{
-"id": 1,
-"name": "John Doe",
-"age": 30,
-"gender": "Male"
-}
+###  Patient Controller
+- `GET /patients`  
+  Fetch all patients.
 
+- `POST /patients`  
+  Register a new patient.
 
-###  Add Doctor (POST /doctors)
-json
-{
-"id": 1,
-"name": "Dr. Smith",
-"specialization": "Cardiology",
-"availableSlots": [
-"2025-08-04T10:00:00",
-"2025-08-04T11:00:00"
-]
-}
+###  Doctor Controller
+- `GET /doctors`  
+  Retrieve all doctors.
 
+- `POST /doctors`  
+  Add a new doctor.
 
-###  Book Appointment (POST /appointments/book)
-json
-{
-"doctorId": 1,
-"patientId": 1,
-"slot": "2025-08-04T10:00:00"
-}
+- `GET /doctors/{id}`  
+  Get doctor details by ID.  
+  _Example:_ `/doctors/1`
 
+- `GET /doctors/{id}/slots`  
+  Retrieve available slots for a doctor.  
+  _Example:_ `/doctors/1/slots`
 
----
+###  Appointment Controller
+- `GET /appointments`  
+  Get all booked appointments.
 
-##  Test Error Scenarios
+- `POST /appointments`  
+  Book a new appointment.
 
-| Condition               | What to Do                                                | Expected Message                 |
-|------------------------|-----------------------------------------------------------|----------------------------------|
-| Doctor not found       | Use invalid "doctorId"                                  | Doctor not found                 |
-| Patient not found      | Use invalid "patientId"                                 | Patient not found                |
-| Slot not available     | Use slot not present in doctor’s availableSlots         | Slot not available for doctor    |
-| Slot already booked    | Try booking same doctor/slot again                        | Slot already booked              |
+- `GET /appointments/doctor/{doctorId}`  
+  Get all appointments for a given doctor ID.
+
+- `GET /appointments/doctor/{doctorId}/date`  
+  Get appointments by doctor ID and date.
 
 ---
+ ### Swagger Screenshot
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/9c8e1030471ccb637b5d9f90c48aae0401aeb958/Patientadd.jpeg?raw=true)
 
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/DoctorAdd.jpeg?raw=true)
+
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithid.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithslot.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctornotavailable.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentadd.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctortorid.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctoridanddate.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentslotnotavailable.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointdoctornotfound.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientnotfoundappointment.jpeg?raw=true)
+
+---
 ##  Booking Logic in Code
 
 java
@@ -112,79 +135,4 @@ This method ensures:
 - In-Memory List Storage: For simplicity during evaluation (no DB dependency).
 - CustomException: Handles error responses with descriptive messages.
 
-  ## 📸 Swagger UI – API Overview
-
-The following image displays all available REST API endpoints exposed by the Clinic Appointment Management System:
-
-### ✅ Patient Controller
-- `GET /patients`  
-  Fetch all patients.
-
-- `POST /patients`  
-  Register a new patient.
-
-### ✅ Doctor Controller
-- `GET /doctors`  
-  Retrieve all doctors.
-
-- `POST /doctors`  
-  Add a new doctor.
-
-- `GET /doctors/{id}`  
-  Get doctor details by ID.  
-  _Example:_ `/doctors/1`
-
-- `GET /doctors/{id}/slots`  
-  Retrieve available slots for a doctor.  
-  _Example:_ `/doctors/1/slots`
-
-### ✅ Appointment Controller
-- `GET /appointments`  
-  Get all booked appointments.
-
-- `POST /appointments`  
-  Book a new appointment.
-
-- `GET /appointments/doctor/{doctorId}`  
-  Get all appointments for a given doctor ID.
-
-- `GET /appointments/doctor/{doctorId}/date`  
-  Get appointments by doctor ID and date.
-
----
-
-### 📷 Swagger Screenshot
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/9c8e1030471ccb637b5d9f90c48aae0401aeb958/Patientadd.jpeg?raw=true)
-
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientget.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/DoctorAdd.jpeg?raw=true)
-
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorget.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithid.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithslot.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctornotavailable.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentadd.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentget.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctortorid.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctoridanddate.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentslotnotavailable.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointdoctornotfound.jpeg?raw=true)
-
-![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientnotfoundappointment.jpeg?raw=true)
-
-
-
-
-
+ 
