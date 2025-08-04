@@ -155,5 +155,5 @@ The following image displays all available REST API endpoints exposed by the Cli
 
 ### 📷 Swagger Screenshot
 
-
+https://github.com/Farhan2763/clinic-appointment-system/blob/9c8e1030471ccb637b5d9f90c48aae0401aeb958/Patientadd.jpeg
 
