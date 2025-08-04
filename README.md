@@ -157,4 +157,34 @@ The following image displays all available REST API endpoints exposed by the Cli
 ![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/9c8e1030471ccb637b5d9f90c48aae0401aeb958/Patientadd.jpeg?raw=true)
 
 
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/DoctorAdd.jpeg?raw=true)
+
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithid.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctorgetwithslot.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/doctornotavailable.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentadd.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentget.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctortorid.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentgetbydoctoridanddate.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointmentslotnotavailable.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/appointdoctornotfound.jpeg?raw=true)
+
+![image alt](https://github.com/Farhan2763/clinic-appointment-system/blob/219a8e30ec3780157850125a301ce1875ead6deb/patientnotfoundappointment.jpeg?raw=true)
+
+
+
+
 
